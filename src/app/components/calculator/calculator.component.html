@@ -1,0 +1,30 @@
+<p>Hola {{title}}</p>
+<h1>{{cadena}}</h1>
+<!--<h1>{{numero}}</h1>
+<button (click)="hazClick(1)">Incrementa 1</button>
+<button (click)="hazClick(2)">Incrementa 2</button>-->
+
+<button (click)="concatenar(btn)" *ngFor="let btn of matriz[0]; let k=index">{{btn}}</button>
+<br>
+<button (click)="concatenar(btn)" *ngFor="let btn of matriz[1]">{{btn}}</button>
+<br>
+<button (click)="concatenar(btn)" *ngFor="let btn of matriz[2]">{{btn}}</button>
+<br>
+<button (click)="concatenar(btn)" *ngFor="let btn of matriz[3]">{{btn}}</button>
+<br>
+
+<!--Otra forma
+<h1>TABLA HTML</h1>
+<h2>{{cadena}}</h2>
+<table>
+    <tr>
+        <td *ngFor="let btn of tablacal">
+            <button (click)="concatenar(btn)">{{btn}}</button>
+        </td>      
+    </tr>
+</table>-->
+
+<app-display [myDisplay]="result"></app-display>
+
+<app-keyboard (signal)="handleSignal($event)"></app-keyboard>
+
