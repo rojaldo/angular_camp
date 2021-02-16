@@ -3,21 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent implements OnInit {
+  heroes = [];
 
-  heroes = ['Batman', 'Superman', 'Spiderman'];
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  getHero(event) {
+    console.log(event);
+    this.heroes.push(event);
   }
-
-  addHero(tag){
-    console.log(tag.value);
-    this.heroes.push(tag.value);
-    tag.value = '';
-  }
-
 }

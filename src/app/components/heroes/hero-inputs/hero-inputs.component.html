@@ -1,0 +1,25 @@
+<div class="form-group">
+  <label for=""></label>
+  <input
+    type="text"
+    #heroName
+    class="form-control"
+    name=""
+    placeholder="Nombre del héroe"
+  />
+  <input
+    type="text"
+    #heroDesc
+    class="form-control"
+    name=""
+    placeholder="Descripcion del héroe"
+  />
+  <small id="helpId" class="form-text text-muted">༼ つ ◕_◕ ༽つ</small>
+</div>
+<button
+  type="button"
+  class="btn btn-primary"
+  (click)="addHero(heroName, heroDesc)"
+>
+  Añadir
+</button>

@@ -8,6 +8,8 @@ import { DisplayComponent } from './components/display/display.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalculatorService } from './services/calculator.service';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroBoxesComponent } from './components/heroes/hero-boxes/hero-boxes.component';
+import { HeroInputsComponent } from './components/heroes/hero-inputs/hero-inputs.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HeroesComponent } from './components/heroes/heroes.component';
     CalculatorComponent,
     KeyboardComponent,
     DisplayComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroBoxesComponent,
+    HeroInputsComponent
   ],
   imports: [
     BrowserModule,
