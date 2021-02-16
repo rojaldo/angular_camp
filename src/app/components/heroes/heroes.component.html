@@ -1,20 +1,19 @@
 <div class="container">
     <div class="form-group">
-      <label for=""></label>
+      <label for="">Nombre</label>
       <input type="text" #heroName class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-      <small id="helpId" class="form-text text-muted">Help text</small>
+    <label for="">Descripción</label>
+    <input type="text" #heroDescription class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
     </div>
-    <button type="button" class="btn btn-primary" (click)="addHero(heroName)">Añadir</button>
+    <button type="button" class="btn btn-primary" (click)="addHero(heroName, heroDescription)">Añadir</button>
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let hero of heroes">
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 class="card-title">{{hero}}</h4>
-                    <p class="card-text"></p>
+                    <h4 class="card-title">{{hero.name}}</h4>
+                    <p class="card-text">{{hero.description}}</p>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
