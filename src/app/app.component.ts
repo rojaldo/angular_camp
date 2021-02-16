@@ -6,11 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'calculator';
-  numero = 42;
 
-  haceClick(value){ 
-    this.numero += value;
-  }
 
 }
