@@ -1,16 +1,17 @@
 <div class="container">
     <div class="form-group">
       <label for=""></label>
-      <input type="text" #heroName class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-      <small id="helpId" class="form-text text-muted">Help text</small>
+      <input type="text" #heroName class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre de héroe">
+      <small id="helpId" class="form-text text-muted">Peña con poderes.</small>
+      <input type="text" #heroDesc class="form-control" name="" id="" aria-describedby="helpId" placeholder="Descripción del héroe">
     </div>
-    <button type="button" class="btn btn-primary" (click)="addHero(heroName)">Añadir</button>
+    <button type="button" class="btn btn-primary" (click)="addHero(heroName, heroDesc)">Añadir</button>
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let hero of heroes">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let hero of heroes; let i = index">
             <div class="card mt-4">
                 <div class="card-body">
                     <h4 class="card-title">{{hero}}</h4>
-                    <p class="card-text"></p>
+                    <p class="card-text">{{description[i]}}</p>
                 </div>
             </div>
 
