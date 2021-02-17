@@ -8,23 +8,12 @@ import { ApodService } from 'src/app/services/apod.service';
 })
 export class ApodComponent implements OnInit {
 
-  result: any = {};
+  myDate = '';
 
-  constructor(public service: ApodService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.service.getRequest().subscribe(
-      (data) => this.processData(data),
-      (error) => this.processError(error)
-    );
-  }
 
-  processData(data: any): void {
-    this.result = data;
-  }
-
-  processError(error: any): void {
-    console.log(error);
   }
 
 }
