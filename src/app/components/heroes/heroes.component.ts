@@ -18,10 +18,13 @@ export class HeroesComponent implements OnInit {
     this.heroes.push(new Hero('Spiderman', 'Spiddy'));
   }
 
-  addHero(heroName: any, heroDescription: any): void{
-    this.heroes.push(new Hero(heroName.value, heroDescription.value));
-    heroName.value = '';
-    heroDescription.value = '';
+  addHero(newHero: Hero): void{
+    console.log(newHero);
+    this.heroes.push(newHero);
+  }
+
+  removeHero(index: number): void {
+    this.heroes.splice(index, 1);
   }
 
 }
