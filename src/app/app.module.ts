@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { KeyboardComponent } from './components/keyboard/keyboard.component';
 import { DisplayComponent } from './components/display/display.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalculatorService } from './services/calculator.service';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { ApodComponent } from './components/apod/apod.component';
+import { ApodService } from './services/apod.service';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,15 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
     DisplayComponent,
     HeroesComponent,
     HeroesListComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    ApodComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, ApodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
