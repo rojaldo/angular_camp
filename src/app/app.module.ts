@@ -15,6 +15,8 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { ApodComponent } from './components/apod/apod.component';
 import { ApodService } from './services/apod.service';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ApodDatePickerComponent } from './components/apod-date-picker/apod-date-picker.component';
+import { ApodShowComponent } from './components/apod-show/apod-show.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HeroesComponent,
     HeroesListComponent,
     HeroFormComponent,
-    ApodComponent
+    ApodComponent,
+    ApodDatePickerComponent,
+    ApodShowComponent
   ],
   imports: [
     BrowserModule,
