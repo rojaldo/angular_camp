@@ -17,6 +17,8 @@ import { ApodService } from './services/apod.service';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ApodDatePickerComponent } from './components/apod-date-picker/apod-date-picker.component';
 import { ApodShowComponent } from './components/apod-show/apod-show.component';
+import { BeersComponent } from './components/beers/beers.component';
+import { AbvPipe } from './pipes/abv.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ApodShowComponent } from './components/apod-show/apod-show.component';
     HeroFormComponent,
     ApodComponent,
     ApodDatePickerComponent,
-    ApodShowComponent
+    ApodShowComponent,
+    BeersComponent,
+    AbvPipe
   ],
   imports: [
     BrowserModule,
