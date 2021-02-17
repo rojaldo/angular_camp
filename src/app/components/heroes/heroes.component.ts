@@ -16,4 +16,8 @@ export class HeroesComponent implements OnInit {
     console.log(event);
     this.heroes.push(event);
   }
+
+  deleteHero($event){
+    this.heroes.splice(this.heroes.indexOf($event),1);
+  }
 }
