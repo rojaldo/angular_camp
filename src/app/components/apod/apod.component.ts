@@ -13,6 +13,9 @@ export class ApodComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //     this.route.queryParams.subscribe(params => {
+    //     this.myDate = params['date'];
+    // });
 
   }
 

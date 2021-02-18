@@ -20,6 +20,11 @@ import { ApodShowComponent } from './components/apod-show/apod-show.component';
 import { BeersComponent } from './components/beers/beers.component';
 import { AbvPipe } from './pipes/abv.pipe';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'; // CLI imports AppRoutingModule
+
 
 @NgModule({
   declarations: [
@@ -34,14 +39,19 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ApodDatePickerComponent,
     ApodShowComponent,
     BeersComponent,
-    AbvPipe
+    AbvPipe,
+    FormComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
     YouTubePlayerModule,
-    NgxSliderModule
+    NgxSliderModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [CalculatorService, ApodService],
   bootstrap: [AppComponent]
