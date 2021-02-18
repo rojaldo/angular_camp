@@ -19,6 +19,7 @@ import { ApodDatePickerComponent } from './components/apod-date-picker/apod-date
 import { ApodShowComponent } from './components/apod-show/apod-show.component';
 import { BeersComponent } from './components/beers/beers.component';
 import { AbvPipe } from './pipes/abv.pipe';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AbvPipe } from './pipes/abv.pipe';
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgxSliderModule
   ],
   providers: [CalculatorService, ApodService],
   bootstrap: [AppComponent]
