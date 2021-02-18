@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user';
 
 import { FormService } from 'src/app/services/form.service';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import {FormBuilder,FormGroup,FormControl,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -14,10 +15,22 @@ export class FormComponent implements OnInit {
 
   paises:any [] = [];
   user: User;
-  myPattern = '[a-zA-ZÑñ]{2,20}';
-  myPatternEmail = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}';
+  myPattern = '[a-zA-ZÑñÁÉÍÓÚáéíóúüÜ]{2,20}';
+  myPatternEmail = '[a-z0-9._%+-]+@[a-z0-9.-]+[.]{1}[a-z]{2,3}';
 
-  constructor(public service: FormService) { }
+  //validación reactiva
+  formSubmitted = false;
+  fn='firstName';
+  ln='lastName';
+  e='email';
+
+  testForm = this.fb.group({
+    firstName: ['',[Validators.required, Validators.pattern(this.myPattern)]],
+    lastName: ['',[Validators.required, Validators.pattern(this.myPattern)]],
+    email: ['',[Validators.required, Validators.pattern(this.myPatternEmail)]],
+  });
+
+  constructor(public service: FormService, private fb:FormBuilder) { }
   ngOnInit() {
       this.user = new User('', '', '', '');
       this.service.getRequest().subscribe(
@@ -36,9 +49,10 @@ export class FormComponent implements OnInit {
     //respuesta del servicio
     
     for (let i=0; i<data.length; i++){
-      this.paises.push(data[i].translations.es);
+      this.paises.push(data[i].name);
+      //this.paises.push(data[i].translations.es); ESTO NO FUNCIONA NO SÉ PORQUÉ
+      console.log(this.paises);
     }
-    console.log(this.paises);
   }
 
   processError(error:any):void{
@@ -46,11 +60,29 @@ export class FormComponent implements OnInit {
   }
 
   search = (text$: Observable<string>) =>
+  
     text$.pipe(
+      
       debounceTime(200),
       distinctUntilChanged(),
-      map(term => term.length < 2 ? []
-        : this.paises.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+      map(term => term.length < 2 ? [] : this.paises.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
 
+  //validación reactiva
+  isFieldValid(field: string): any{
+    return(
+      this.testForm.get(field).errors && this.testForm.get(field).touched || 
+      this.testForm.get(field).untouched && 
+      this.formSubmitted && this.testForm.get(field).errors
+    )
+  }
+
+  onSubmit(): void {
+    this.formSubmitted = true;
+    if (this.testForm.valid) {
+      alert('VALID');
+    } else {
+      alert('NOT VALID');
+    }
+  }
 }
