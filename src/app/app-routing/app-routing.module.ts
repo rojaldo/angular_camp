@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { ApodComponent } from '../components/apod/apod.component';
 import { BeersComponent } from '../components/beers/beers.component';
 import { CalculatorComponent } from '../components/calculator/calculator.component';
+import { CountriesComponent } from '../components/countries/countries.component';
 import { FormComponent } from '../components/form/form.component';
 import { HeroesComponent } from '../components/heroes/heroes.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'apod/:date', component: ApodComponent },
     { path: 'beers', component: BeersComponent },
     { path: 'form', component: FormComponent },
-    { path: '', redirectTo: '/calculator', pathMatch: 'full' },
+    { path: 'countries', component: CountriesComponent },
+    { path: '', redirectTo: '/countries', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 
 

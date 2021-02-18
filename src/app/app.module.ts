@@ -23,7 +23,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'; // CLI imports AppRoutingModule
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CountriesComponent } from './components/countries/countries.component'; // CLI imports AppRoutingModule
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BeersComponent,
     AbvPipe,
     FormComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,
