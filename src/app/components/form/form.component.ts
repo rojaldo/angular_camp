@@ -20,14 +20,13 @@ export class FormComponent implements OnInit {
   formSubmitted = false;
 
   countries = [];
-  search : any;
   public model: any;
   fn = 'firstName';
   ln = 'lastName';
   e = 'email';
 
-  namePattern = '[a-zA-ZñÑáéíóúÁÉÍÓÚs]+';
-  emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}';
+  namePattern = '[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+';
+  emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+[.]{1}[a-z]{2,3}';
 
   testForm = this.fb.group({
     firstName: [
@@ -36,6 +35,7 @@ export class FormComponent implements OnInit {
     ],
     lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
     email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+    country: ''
   });
 
   constructor(private fb: FormBuilder, private formService: FormServiceService) {}
@@ -45,23 +45,22 @@ export class FormComponent implements OnInit {
     this.formService.getCountries().subscribe((data) => {
       this.countries = this.processData(data);
       console.log(this.countries);
-      this.search = (text$: Observable<string>) =>
-        text$.pipe(
-          debounceTime(200),
-          distinctUntilChanged(),
-          map((term) =>
-            term.length < 2
-              ? []
-              : this.countries
-                  .filter(
-                    (v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1
-                  )
-                  .slice(0, 10)
-          )
-        );
     });
   }
-
+  search = (text$: Observable<string>) =>
+  text$.pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    map((term) =>
+      term.length < 2
+        ? []
+        : this.countries
+            .filter(
+              (v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1
+            )
+            .slice(0, 10)
+    )
+  );
   submitForm(form: any): void {
     console.log('Form Data: ');
     console.log(form);
