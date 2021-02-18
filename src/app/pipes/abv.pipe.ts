@@ -8,9 +8,9 @@ export class AbvPipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {
     if (typeof value === 'number') {
       if (args.length > 0) {
-        return '' + value + args[0];
+        return '' + value.toLocaleString('es-ES') + args[0];
       }
-      return value + '%';
+      return value.toLocaleString('es-ES') + '%';
     }
     // Error case
     else{
