@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
     this.user = new User('', '', '');
     this.formService.getCountries().subscribe((data) => {
       this.countries = this.processData(data);
-      console.log(this.countries);
+     // console.log(this.countries);
     });
   }
   search = (text$: Observable<string>) =>
