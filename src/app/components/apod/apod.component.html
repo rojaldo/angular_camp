@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2 m-4">
+           <app-apod-date-picker (fechaSignal)="myDate = $event"></app-apod-date-picker> <!-- consigue la fecha que llega del output -->
+        </div>
+        <div class="col-1"></div>
+        <div class="col-8">
+            <app-apod-show [date]="myDate"></app-apod-show> <!-- coge el myDate de arriba, que nos devuelve el string para ahora mandárselo al show -->
+        </div>
+    </div>
+</div>

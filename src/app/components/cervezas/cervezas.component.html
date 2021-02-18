@@ -1,0 +1,29 @@
+<div class="container m-4">
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="handleChange(value, highValue)"></ngx-slider>
+    
+    <ngb-accordion *ngFor="let cerveza of beers; let i = index">
+        <!--<ngb-panel *ngIf="cerveza.abv >= value && cerveza.abv <= highValue">-->
+        <ngb-panel>
+            <ng-template ngbPanelTitle>
+                <strong>{{cerveza.name}}</strong>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        {{cerveza.description}}
+                    </div>
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div class="col-md-3 col-sm-5">
+                        Lema: {{cerveza.tagline}}
+                        Alcohol: {{cerveza.abv | abv:'º'}} <!-- pipe para dar formato al texto que saldrá -->
+                    </div>
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div class="col-md-2 col-sm-10 text-center">
+                        <img [src]="cerveza.image_url" height="150px;">
+                    </div>
+                    <div class="col-md-none col-sm-1"></div>
+                </div>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

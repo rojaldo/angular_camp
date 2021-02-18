@@ -1,0 +1,4 @@
+<div class="container">
+    <app-heroes-form (addHeroSignal)="addHero($event)"></app-heroes-form><!-- el parametro entre parentesis en la etiqueta es lo que se recibe, event es el contenido que se manda al método que queramos en el TS -->
+    <app-heroes-list [heroesList]="heroes" (removeHeroSignal)="removeHero($event)"></app-heroes-list> <!-- el parametro entre corchetes es lo que se envia a ese otro componente -->
+</div>

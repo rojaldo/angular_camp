@@ -1,0 +1,17 @@
+<div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let hero of heroesList; let i = index"> <!--se recorre el array y además define una variable para el índice-->
+            <!--
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let hero of heroes">{{hero}}</li>
+            </ul>
+            -->
+            <div class="card mt-4">
+                <!--<img class="card-img-top" src="holder.js/100x180/" alt="">-->
+                <div class="card-body">
+                    <h4 class="card-title">{{hero.nombre}}</h4>
+                    <p class="card-text">{{hero.descripcion}}</p>
+                    <button type="button" class="btn btn-danger" (click)="removeHero(i)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
