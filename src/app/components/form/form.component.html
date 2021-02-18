@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label>First Name:</label>
                 <input type="text" class="form-control" placeholder="John" #firstName="ngModel" name="firstName"
-                    [(ngModel)]="user.firstName" [pattern]="myPattern" maxlength="3" required>
+                    [(ngModel)]="user.firstName" [pattern]="namePattern" maxlength="3" required>
                 <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">First name is required
                 </div>
             </div>
@@ -19,6 +19,40 @@
             <!-- CONTINUA ... -->
             <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
         </form>
+    </div>
+
+    <form [formGroup]="testForm">
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" [formControlName]="fn">
+            <div *ngIf="isFieldValid(fn)">
+                <div style="font-size: 12px; color: red">
+                    NOT VALID
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Apellido:</label>
+            <input type="text" [formControlName]="ln">
+            <div *ngIf="isFieldValid(ln)">
+                <div style="font-size: 12px; color: red">
+                    NOT VALID
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" [formControlName]="e">
+            <div *ngIf="isFieldValid(e)">
+                <div style="font-size: 12px; color: red">
+                    NOT VALID
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div>
+        <button (click)="onSubmit()">Submit</button>
     </div>
 
 </div>
