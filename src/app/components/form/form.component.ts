@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   e = 'email';
 
   namePattern = '[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+';
-  emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}';
+  emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+[.]{1}[a-z]{2,3}';
 
   testForm = this.fb.group({
     firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
