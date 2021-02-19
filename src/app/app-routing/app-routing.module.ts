@@ -7,6 +7,7 @@ import { CountriesComponent } from '../components/countries/countries.component'
 import { FormComponent } from '../components/form/form.component';
 import { HeroesComponent } from '../components/heroes/heroes.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { TrivialComponent } from '../components/trivial/trivial.component';
 
 const routes: Routes = [
     { path: 'calculator', component: CalculatorComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'beers', component: BeersComponent },
     { path: 'form', component: FormComponent },
     { path: 'countries', component: CountriesComponent },
+    { path: 'trivial', component: TrivialComponent },
     { path: '', redirectTo: '/countries', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 
