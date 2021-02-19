@@ -24,7 +24,8 @@ import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { CountriesComponent } from './components/countries/countries.component'; // CLI imports AppRoutingModule
+import { CountriesComponent } from './components/countries/countries.component';
+import { SortPipe } from './pipes/sort.pipe'; // CLI imports AppRoutingModule
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CountriesComponent } from './components/countries/countries.component';
     AbvPipe,
     FormComponent,
     PageNotFoundComponent,
-    CountriesComponent
+    CountriesComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
