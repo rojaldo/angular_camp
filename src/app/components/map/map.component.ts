@@ -32,7 +32,7 @@ export class MapComponent implements OnInit {
     }).forEach((element) => {
       array.push(element);
     });
-    return array;
+    return array.sort((a,b)=>Math.random()<.5?-1:1);
   }
   filterData(input) {
     this.countriesAux = this.countries.filter((e) => {
