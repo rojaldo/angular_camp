@@ -1,14 +1,8 @@
 <div class="container">
-    
+    <app-score [add]="points"></app-score>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let card of cards">
-            <div class="card">
-                <img class="card-img-top" src="holder.js/100x180/" alt="">
-                <div class="card-body">
-                    <h4 class="card-title" [innerHTML]="card.question"></h4>
-                    <button type="button" class="btn btn-primary btn-block" *ngFor="let answer of card.answers" [innerHTML]="answer"></button>
-                </div>
-            </div>
+            <app-card [card]="card" (signal)="updateScore($event)"></app-card>
         </div>
     </div>
     

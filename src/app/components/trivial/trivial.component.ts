@@ -11,6 +11,7 @@ export class TrivialComponent implements OnInit {
 
   result: any = {};
   cards: Card[] = [];
+  points = 0;
 
   constructor(public service: TrivialService) { }
 
@@ -30,6 +31,14 @@ export class TrivialComponent implements OnInit {
 
   processError(error: any): void {
     console.log(error);
+  }
+
+  updateScore(rightAnswer) {
+    if (rightAnswer) {
+      this.points += 2;
+    }else {
+      this.points += -1;
+    }
   }
 
 }

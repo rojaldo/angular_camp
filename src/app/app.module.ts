@@ -26,7 +26,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { SortPipe } from './pipes/sort.pipe';
-import { TrivialComponent } from './components/trivial/trivial.component'; // CLI imports AppRoutingModule
+import { TrivialComponent } from './components/trivial/trivial.component';
+import { CardComponent } from './components/card/card.component';
+import { ScoreComponent } from './components/score/score.component'; // CLI imports AppRoutingModule
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { TrivialComponent } from './components/trivial/trivial.component'; // CL
     PageNotFoundComponent,
     CountriesComponent,
     SortPipe,
-    TrivialComponent
+    TrivialComponent,
+    CardComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,
