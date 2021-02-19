@@ -11,11 +11,29 @@
   </div>
   <div class="row">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="sortByName($event)" unchecked>
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="sortByName($event)" checked>
       <label class="form-check-label" for="flexCheckDefault">
         Sort by name
       </label>
     </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="sortByArea($event)" unchecked>
+      <label class="form-check-label" for="flexCheckDefault">
+        Sort by area
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="sortByPopulation($event)" unchecked>
+      <label class="form-check-label" for="flexCheckDefault">
+        Sort by population
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <label>
+      Sort by specific area
+    </label>
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="handleChange(value, highValue)"></ngx-slider>
   </div>
   <div class="row">
     <div
@@ -26,7 +44,8 @@
         <div class="card-body">
           <img src="{{ country.flag }}" style="height: 20px; width: 20px" />
           <h4 class="card-title">{{ country.name }}</h4>
-          <p class="card-text">{{ country.subregion }}</p>
+          <p class="card-text">{{ country.area }} km2</p>
+          <p class="card-text">{{ country.population }} people</p>
         </div>
       </div>
     </div>
