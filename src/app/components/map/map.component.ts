@@ -34,6 +34,7 @@ export class MapComponent implements OnInit {
     });
     return array.sort((a,b)=>Math.random()<.5?-1:1);
   }
+
   filterData(input) {
     this.countriesAux = this.countries.filter((e) => {
       return e.name.toLowerCase().includes(input.value.toLowerCase());
@@ -70,7 +71,7 @@ export class MapComponent implements OnInit {
   sortByPopulation($event) {
     if ($event.target.checked) {
       this.countriesAux = this.countriesAux.sort((a, b) => {
-        return b.population- (a.population);
+        return b.population - (a.population);
       });
     }
     else{

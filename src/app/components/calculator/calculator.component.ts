@@ -22,6 +22,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
     this.display = this.service.getDisplay();
   }
 
+
   handleSignal(value: any): void {
     // this.result += value;
     if (typeof value === 'string'){

@@ -24,7 +24,8 @@ import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { MapComponent } from './components/map/map.component'; // CLI imports AppRoutingModule
+import { MapComponent } from './components/map/map.component';
+import { QuestionsComponent } from './components/questions/questions.component'; // CLI imports AppRoutingModule
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MapComponent } from './components/map/map.component'; // CLI imports Ap
     AbvPipe,
     FormComponent,
     PageNotFoundComponent,
-    MapComponent
+    MapComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

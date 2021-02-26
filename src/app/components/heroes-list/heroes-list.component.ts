@@ -8,7 +8,7 @@ import { Hero } from 'src/app/model/hero';
 })
 export class HeroesListComponent implements OnInit {
 
-  @Input() heroesList: Hero[];
+  @Input() heroesList: any;
   @Output() removeHeroSignal = new EventEmitter<number>();
 
   constructor() { }
@@ -16,9 +16,8 @@ export class HeroesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeHero(index: number): void {
-    console.log(index);
-    this.removeHeroSignal.emit(index);
+  removeHero(ID: number): void {
+    this.removeHeroSignal.emit(ID);
   }
 
 }

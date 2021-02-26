@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngFor="let pregunta of questions; let i = index" style="margin: 70px;">
+      <h3>{{ i + 1 }}. {{ pregunta.title }}</h3>
+      <div *ngFor="let respuesta of pregunta.answers" style="margin: 10px">
+        <button type="button" (click)="checkAnswer(respuesta,pregunta)" class="btn btn-primary btn-lg btn-block">
+          {{ respuesta }}
+        </button>
+      </div>
+    </div>
+</div>

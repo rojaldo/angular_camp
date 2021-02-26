@@ -1,4 +1,4 @@
 export class Hero {
-    constructor(public name: string, public description: string){
+    constructor(public id,public name: string, public description: string){
     }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HeroesService } from 'src/app/services/heroes.service';
 import {Hero} from '../../model/hero';
 
 @Component({
@@ -8,23 +10,20 @@ import {Hero} from '../../model/hero';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  heroes : Observable<any>;
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
-    this.heroes.push(new Hero('Superman', 'Man of steel'));
-    this.heroes.push(new Hero('Batman', 'Dark knight'));
-    this.heroes.push(new Hero('Spiderman', 'Spiddy'));
+    this.heroes = this.heroesService.getHeroes();
   }
 
   addHero(newHero: Hero): void{
-    console.log(newHero);
-    this.heroes.push(newHero);
+    this.heroesService.createHero(newHero)
   }
 
-  removeHero(index: number): void {
-    this.heroes.splice(index, 1);
+  removeHero(newHeroId: number): void {
+    this.heroesService.deleteHero(newHeroId)
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Hero } from 'src/app/model/hero';
-
+import * as uuid from 'uuid';
 @Component({
   selector: 'app-hero-form',
   templateUrl: './hero-form.component.html',
@@ -8,7 +8,7 @@ import { Hero } from 'src/app/model/hero';
 })
 export class HeroFormComponent implements OnInit {
 
-  @Output() addHeroSignal = new  EventEmitter<Hero>();
+  @Output() addHeroSignal = new EventEmitter<Hero>();
 
   constructor() { }
 
@@ -16,7 +16,9 @@ export class HeroFormComponent implements OnInit {
   }
 
   addHero(heroName: any, heroDescription: any): void{
-    this.addHeroSignal.emit(new Hero(heroName.value, heroDescription.value));
+    let id = Math.random() * (1000000 - 1) + 1;
+    this.addHeroSignal.emit(new Hero(id,heroName.value, heroDescription.value));
+    
     heroName.value = '';
     heroDescription.value = '';
   }
